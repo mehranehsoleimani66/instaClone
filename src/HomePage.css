@@ -3,8 +3,8 @@
      flex-direction: row;
 }
 .homepage_nav{
-    display: 0.2;
+    flex: 0.2;
 }
 .homepage_timeline{
-    display: 0.8;
+    flex: 0.8;
 }
