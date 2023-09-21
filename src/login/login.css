@@ -1,24 +1,26 @@
 *{
     box-sizing: border-box;
-   
+    background-color: rgb(250,250,250);
+   color: black;
 }
 .login_container{
-    
+   
 display: flex;
-margin:  auto;
+margin: 50px auto;
 text-align: center;
 justify-content: center;
 flex-direction: column;
-width: 30%;
-height: 100vh;
+width: 100%;
+/* height: 100vh; */
 font-family: Arial, Helvetica, sans-serif;
-background-color:black;
+gap: 10px;
+
 
 }
 .instagram_logo{
     width: 175px;
     height: 51px;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 .box_1{
@@ -26,13 +28,13 @@ background-color:black;
     width:350px ;
     border:1px solid rgb(219,219,219) ;
     margin: auto;
-    background-color:white;
+    
 }
 .fb_logo{
-    width: 50px;
-    height: 50%;
+    width: 15px;
+    height: 15px;
 }
-.appStore{
+.app2{
     width: 136px;
     height: 100px;
     margin-right: 5px;
@@ -50,7 +52,7 @@ background-color:black;
     color: black;
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    
     align-items: center;
     text-align: center;
     margin: auto;
@@ -60,7 +62,7 @@ background-color:black;
 input{
     background-color: rgb(250,250,250);
     font-weight: 400;
-    line-height: 10px;
+    line-height: 18px;
     font-size: 13px;
     padding: 9px 0 7px 8px;
     height: 36px;
@@ -72,6 +74,76 @@ input{
 
 }
 .login_button{
-    color:white;
+    border-radius: 4px;
+    color:rgb(255,255,255);
     background-color:#0095f6 ;
+padding: 5px 9px;
+border: none;
+width: 260px;
+height: 30px;
+font-size: 14px;
+font-weight: bold;
+margin: 10px 0;
+cursor: pointer;
 }
+.app2{
+background-color: white;
+width: 136px;
+height: 40px;
+margin-right: 5px;
+}
+.googlePlay{
+    background-color: white;
+    width: 136px;
+    height: 40px;
+    margin-right: 5px;
+    }
+    .lines_box{
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 10px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #8e8e8e;
+    }
+    .line_1{
+        width: 106px;
+        height: 1px;
+      background-color: #dbdbdb;
+      margin-right: 10px;
+
+    }
+    .line_2{
+        width: 106px;
+        height: 1px;
+      background-color: #dbdbdb;
+      margin-left: 10px;
+      
+    }
+    .fb_box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+
+    }
+    .fb_link{
+        color:#385185;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .forgatten_password_link{
+        color: #385185;
+        font-size: 13px;
+        /* font-weight: bold; */
+
+    }
+    .box_2 span{
+        color: #0095f6 ;
+        font-weight: bolder;
+    }

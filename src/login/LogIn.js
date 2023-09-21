@@ -1,4 +1,4 @@
-import appStore from '../assets/appStore.png'
+import app2 from '../assets/app2.jpg'
 import googlePlay from '../assets/googlePlay.png'
 import logo from '../assets/logo.png'
 import faceBook from '../assets/faceBook.png'
@@ -24,7 +24,7 @@ const LogIn = () => {
                 <div className='lines_box'>
                     <div className='line_1'></div>
                     <div className='or'>oR</div>
-                    <div className='line_1'></div>
+                    <div className='line_2'></div>
                 </div>
                 <div className='fb_link'>
                     <span>
@@ -43,7 +43,7 @@ const LogIn = () => {
                 <p>Get the APP</p>
             </div>
             <div className="app_store_google_play">
-            <img src={appStore} alt='' className='appStore'/>
+            <img src={app2} alt='' className='app2'/>
             <img src={googlePlay} alt='' className='googlePlay'/>
             </div>
 
