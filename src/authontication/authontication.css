@@ -1,0 +1,41 @@
+.authontication{
+    display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin: 0px 30px 0px 30px;
+
+}
+.auth_lrft{
+    flex: 0.5;
+    align-items: center;
+}
+.auth_right{
+    flex: 0.5;
+
+}
+ .auth_left > img{
+    margin-top: 40px;
+     width: 400px;
+ }
+ .auth_more{
+    border: 1px solid gray;
+    padding: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+    margin-top: 15px;
+ }
+ .auth_more > span{
+    font-size:14px ;
+    font-weight: 500;
+ }
+ .auth_more > span > button{
+ border:0;
+ background: 0;
+ color: #0095f6;
+font-weight:bolder ;
+}
+.auth_more > span > button:hover{
+cursor: pointer;
+}
