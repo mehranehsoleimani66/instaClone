@@ -1,48 +1,44 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './timeline.css'
 import Suggestion from './Suggestion';
+import axios from 'axios';
 import Post from './Post';
 const TimeLine=()=> {
-  const [posts,setPost]=useState([
-    {
-      id: 0,
-      user:'marriam_34',
-      postImg:'./pic2.png',
-      likes:'128',
-      timespamp:'12h'
+  
+  const [posts,setPost]=useState([])
+  const getPostsHandler =async()=>{
+  
+    const response = await axios.get('http://localhost:3000/posts')
+    const {data} = response
+    setPost(data)
+    // console.log(data,'data')
+ }
 
-    },
-    {id:1 ,
-      user:'raddin_.',
-      postImg:'./pic1.png',
-      likes:'128',
-      timespamp:'1min'},
-      {
-        id: 2,
-      user:'maxiee2098',
-      postImg:'./pic3.png',
-      likes:'1098',
-      timespamp:'3h'
+ 
+    useEffect(()=>{getPostsHandler();}
+    ,[])
 
-      }
-
-  ])
+  
   return (
     <div className='timeline'>
      <div className='timeline_left'>
       <div className='timeline_post'>
-        {posts.map((item)=>(
+         {posts.map((item)=>(
           <Post 
-          key={item.id}
-          user={item.user}
-          postImg={item.postImg}
-          likes={item.likes}
-          timespamp={item.timespamp}
+          postId={item.postId}
+          userName={item.userName}
+          userAvatar={item.userAvatar}
+          likesCount={item.likesCount}
+         commentText={item.commentText}
+         postImage={item.postImage}
+         postTitle={item.postTitle}
+         postBody={item.postBody}
+         timespamp={item.timespamp}
           />
           
         )
           
-        )}
+        )} 
        
 
       </div>
