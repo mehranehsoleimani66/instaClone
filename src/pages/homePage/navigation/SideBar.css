@@ -1,64 +1,61 @@
-.sidebar{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    z-index: 1;
-   
+.sidebar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 1;
 }
-.sidebar_logo{
-    width: 120px;
-    margin: 25px;
+.sidebar_logo {
+  width: 120px;
+  margin: 25px;
 }
-.sidebar_buttons{
-    display: flex;
-    flex-direction: column;
+.sidebar_buttons {
+  display: flex;
+  flex-direction: column;
 }
-.sidebar_button{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    color: white;
-    background: 0;
-    margin: 5px 10px 5px 10px;
-    padding:10px 15px 10px 15px ;
-    border: 0;
-    border-radius: 15px;
-    width: 100%;
+.sidebar_button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  background: 0;
+  margin: 5px 10px 5px 10px;
+  padding: 10px 15px 10px 15px;
+  border: 0;
+  border-radius: 15px;
+  width: 100%;
 }
-.sidebar_button:hover{
-cursor: pointer;
-background: rgba(255,255,255,0.128);
+.sidebar_button:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.128);
 }
-.sidebar_button > span{
-    font-size: 18px;
-    font-weight: bolder;
-    margin-left: 10px;
+.sidebar_button > span {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 10px;
 }
-.sidebar_more{
-    position: fixed;
-    bottom:0;
-}
-.logout__button{
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: bold;color: white;
-    background-color: rgba(255,255,255,0.211);
-    padding: 10px;
-    border: 0;
-    
-}
-.logout__button{
-    cursor: pointer;
-    background-color: rgba(255,255,255,0.424);
-}
-.login__button{
 
-    font-size: 15px;
-    border-radius: 10px;
-    font-weight: bold;color: white;
-    background-color: rgba(247, 9, 9, 0.961);
-    padding: 10px;
-    color: white;
-    border: 0; 
+.logout__button {
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.211);
+  padding: 10px;
+  border: 0;
+}
+
+.login__button {
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(247, 9, 9, 0.961);
+  padding: 10px;
+  color: white;
+  border: 0;
+}
+.sidebar_more {
+  position: fixed;
+  bottom: 0;
 }
