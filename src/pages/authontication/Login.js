@@ -1,55 +1,43 @@
-import React, { useContext, useState } from "react";
-
-import "./LogIn.css";
+import "./Login.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import UserContext from "../../context/userContext";
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [user, setUser] = useState("");
-  const [password, setPassword] = useState("");
 
-  const myUserContext = useContext(UserContext);
+import { useState, useContext, useEffect } from "react";
+import AuthContext, { AuthProvider } from "../../context/userContext";
+import { useNavigate } from "react-router";
+
+const Login = () => {
+  const { setAuth } = useContext(AuthContext);
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const LOG_URL = "/user";
   const navigate = useNavigate();
 
-  const loginHandler = () => {
-    //شماره کاربر و کد تایید به بک اند ارسال  می کنیم
-    axios
-      .post("http://localhost:3000/user?user", {
-        user: user,
-        email: email,
-        password: password
-      })
-      .then(({ data }) => {
-        console.log(data, "data from post");
-        myUserContext.setUserHandler(data);
-        console.log(myUserContext, "data context");
-        navigate("/HomePage");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const loginHandler = async () => {
+    const response = await axios.get("http://localhost:3000/user");
+    const { userEmail, userPassword } = response;
+    setAuth({ userEmail, userPassword });
+    setUserEmail(userEmail);
+    setUserPassword(userPassword);
+    navigate("/");
   };
+
+  useEffect(() => {
+    loginHandler();
+  }, []);
 
   return (
     <div className="login">
       <img src="./images.png" />
       <input
         type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={userEmail}
+        onChange={(e) => setUserEmail(e.target.value)}
         placeholder="Email"
       />
       <input
-        type="text"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
-        placeholder="Username"
-      />
-      <input
         type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={userPassword}
+        onChange={(e) => setUserPassword(e.target.value)}
         placeholder="Password"
       />
       <button onClick={loginHandler}>Log in</button>
