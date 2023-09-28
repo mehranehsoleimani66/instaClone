@@ -1,24 +1,36 @@
 import "./Login.css";
 import axios from "axios";
 
-import { useState, useContext, useEffect } from "react";
-import AuthContext, { AuthProvider } from "../../context/userContext";
+import { useEffect } from "react";
+import { useAuth } from "../../context/userContext";
 import { useNavigate } from "react-router";
 
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
-  const [userEmail, setUserEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
-  const LOG_URL = "/user";
+  const { userEmail, userPassword, setUserEmail, setUserPassword } = useAuth();
+  //
   const navigate = useNavigate();
 
   const loginHandler = async () => {
-    const response = await axios.get("http://localhost:3000/user");
-    const { userEmail, userPassword } = response;
-    setAuth({ userEmail, userPassword });
-    setUserEmail(userEmail);
-    setUserPassword(userPassword);
-    navigate("/");
+    try {
+      const response = await axios.get(" http://localhost:3000/user");
+
+      const { data } = response;
+      console.log(data.userEmail, "lll");
+      localStorage.setItem("useremail", data.userEmail);
+      localStorage.setItem("userpassword", data.userPassword);
+
+      if (data?.userEmail) {
+        const storedUserEmail = JSON.parse(localStorage.getItem("userEmail"));
+        const storedUserPassword = JSON.parse(
+          localStorage.getItem("userPassword")
+        );
+        setUserEmail(storedUserEmail);
+        setUserPassword(storedUserPassword);
+        navigate("/homepage");
+      }
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   useEffect(() => {
