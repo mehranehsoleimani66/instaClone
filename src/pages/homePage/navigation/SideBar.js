@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import "./SideBar.css";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,27 +8,40 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Avatar } from "@mui/material";
-
 import { message } from "antd";
-
-import { Link } from "react-router-dom";
-import UserContext from "../../../context/userContext";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/userContext";
 
 function SideBar() {
-  const myUserContext = useContext(UserContext);
-
+  const navigate = useNavigate();
+  const { userEmail, setUserEmail, setUserPassword } = useAuth();
   const logOutHandler = () => {
-    console.log(myUserContext, "pak shod");
-
-    myUserContext.setUserHandler(null);
-
+    localStorage.clear();
+    setUserEmail("");
+    setUserPassword("");
     message.success("خارج شدید");
-    // navigate("Authontication");
+    navigate("/");
   };
 
   return (
     <div className="sidebar">
+      <div className="user__info ">
+        {userEmail ? (
+          <div>
+            <div className="user__email">
+              <Avatar></Avatar>
+              <span className="email__text">{userEmail}</span>
+            </div>
+
+            <button className="logout__button" onClick={logOutHandler}>
+              logout
+            </button>
+          </div>
+        ) : null}
+      </div>
+
       <img className="sidebar_logo" src="./images.png" alt="" />
+
       <div className="sidebar-buttons">
         <button className="sidebar_button">
           <HomeIcon />
@@ -64,25 +76,7 @@ function SideBar() {
           <AddCircleOutlineIcon />
           <span>Create</span>
         </button>
-        <div className="sidebar_button ">
-          {myUserContext ? (
-            <>
-              <Avatar></Avatar>
-              <span>{myUserContext.userEmail}</span>
-              <button className="logout__button" onClick={logOutHandler}>
-                logout
-              </button>
-            </>
-          ) : (
-            <>
-              <Avatar></Avatar>
-              <span></span>
-              <Link to="/">
-                <button className="login__button">login</button>
-              </Link>
-            </>
-          )}
-        </div>
+
         <div className="sidebar_more">
           <button className="sidebar_button">
             <MenuIcon />
