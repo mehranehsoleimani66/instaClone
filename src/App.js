@@ -18,48 +18,22 @@ import HomePage from "./pages/homePage/HomePage";
 
 function App() {
   //   // localState
-  //   const [userName, setUserName] = useState("");
-  //   const [userEmail, setUserEmail] = useState("");
-  //   const [userPassword, setUserPassword] = useState("");
-
-  //   //get the user from the localStorage
-  //   useEffect(() => {
-  //     const storedUserName = JSON.parse(localStorage.getItem("userName"));
-  //     const storedUserEmail = JSON.parse(localStorage.getItem("userEmail"));
-  //     const storedUserPassword = JSON.parse(localStorage.getItem("userPassword"));
-  //     const doesUserExist =
-  //       !!storedUserName && !!storedUserEmail && !!storedUserPassword;
-  //     if (doesUserExist) {
-  //       setUserName(storedUserName);
-  //       setUserEmail(storedUserEmail);
-  //       setUserPassword(storedUserPassword);
-  //     }
-  //   }, []);
-
-  //   const setUserHandler = (
-  //     storedUserName,
-  //     storedUserEmail,
-  //     storedUserPassword
-  //   ) => {
-  //     setUserName(userName);
-  //     setUserEmail(userEmail);
-  //     setUserPassword(userPassword);
-  //     localStorage.setItem("userName", JSON.stringify(storedUserName));
-  //     localStorage.setItem("userEmail", JSON.stringify(storedUserEmail));
-  //     localStorage.setItem("userPassword", JSON.stringify(storedUserPassword));
-  //   };
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [userPassword, setUserPassword] = useState("");
 
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Authontication />} />
-          <Route path="/homepage" element={<HomePage />} />
-        </Routes>
-      </Router>
-      {/* <>
+      <>
         <UserProvider
-          value={{ userName, userEmail, userPassword, setUserHandler }}
+          value={{
+            userName,
+            userEmail,
+            userPassword,
+            setUserName,
+            setUserEmail,
+            setUserPassword
+          }}
         >
           <Router>
             <Routes>
@@ -68,7 +42,7 @@ function App() {
             </Routes>
           </Router>
         </UserProvider>
-      </> */}
+      </>
     </div>
   );
 }
