@@ -10,11 +10,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Avatar } from "@mui/material";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../context/userContext";
+import { AuthCountext } from "../../../context/AuthContext";
 
 function SideBar() {
+  const { userEmail, UserPassword, setUserEmail, setUserPassword } =
+    AuthCountext();
+  console.log(userEmail, "userEmail hast");
+  console.log(UserPassword, "UserPassword hast");
+
   const navigate = useNavigate();
-  const { userEmail, setUserEmail, setUserPassword } = useAuth();
   const logOutHandler = () => {
     localStorage.clear();
     setUserEmail("");
@@ -22,7 +26,6 @@ function SideBar() {
     message.success("خارج شدید");
     navigate("/");
   };
-
   return (
     <div className="sidebar">
       <div className="user__info ">
@@ -32,16 +35,13 @@ function SideBar() {
               <Avatar></Avatar>
               <span className="email__text">{userEmail}</span>
             </div>
-
             <button className="logout__button" onClick={logOutHandler}>
               logout
             </button>
           </div>
         ) : null}
       </div>
-
       <img className="sidebar_logo" src="./images.png" alt="" />
-
       <div className="sidebar-buttons">
         <button className="sidebar_button">
           <HomeIcon />
@@ -51,32 +51,26 @@ function SideBar() {
           <SearchIcon />
           <span>Search</span>
         </button>
-
         <button className="sidebar_button">
           <ExploreIcon />
           <span>Explore</span>
         </button>
-
         <button className="sidebar_button">
           <SlideshowIcon />
           <span>Reels</span>
         </button>
-
         <button className="sidebar_button">
           <ChatIcon />
           <span>Messages</span>
         </button>
-
         <button className="sidebar_button">
           <FavoriteBorderIcon />
           <span>Notification</span>
         </button>
-
         <button className="sidebar_button">
           <AddCircleOutlineIcon />
           <span>Create</span>
         </button>
-
         <div className="sidebar_more">
           <button className="sidebar_button">
             <MenuIcon />
