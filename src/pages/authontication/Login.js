@@ -1,58 +1,65 @@
 import "./Login.css";
 import axios from "axios";
-
-import { useEffect } from "react";
-import { useAuth } from "../../context/userContext";
-import { useNavigate } from "react-router";
+import { useEffect, useRef, useState } from "react";
+import { AuthCountext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { userEmail, userPassword, setUserEmail, setUserPassword } = useAuth();
-  //
+  const {
+    userEmail,
+    setUserEmail,
+    setUserPassword,
+    userPassword,
+    users,
+    setUsers
+  } = AuthCountext();
+
+  const inputEmailRef = useRef(null);
+  const inputPasswordRef = useRef(null);
   const navigate = useNavigate();
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/users")
+      .then((res) => setUsers(res.data))
 
-  const loginHandler = async () => {
-    try {
-      const response = await axios.get(" http://localhost:3000/user");
+      .catch((err) => console.log(err));
+  }, []);
 
-      const { data } = response;
-      console.log(data.userEmail, "lll");
-      localStorage.setItem("useremail", data.userEmail);
-      localStorage.setItem("userpassword", data.userPassword);
+  const LoginHandler = () => {
+    console.log(users[0]);
+    let user = users?.filter(
+      (u) =>
+        u.userEmail === inputEmailRef.current.value &&
+        u.userPassword === inputPasswordRef.current.value
+    );
 
-      if (data?.userEmail) {
-        const storedUserEmail = JSON.parse(localStorage.getItem("userEmail"));
-        const storedUserPassword = JSON.parse(
-          localStorage.getItem("userPassword")
-        );
-        setUserEmail(storedUserEmail);
-        setUserPassword(storedUserPassword);
-        navigate("/homepage");
-      }
-    } catch (err) {
-      console.error(err);
+    if (user.length > 0) {
+      console.log(user, "hastam");
+
+      const userArrayString = JSON.stringify(user);
+      localStorage.setItem("myArray", userArrayString);
+      console.log(userArrayString, "myArray");
+
+      const storedArrayUser = localStorage.getItem("myArray");
+
+      const parsedEmailArray = JSON.parse(storedArrayUser);
+
+      setUserEmail(parsedEmailArray[0].userEmail);
+      setUserPassword(parsedEmailArray[0].userPassword);
+
+      console.log(parsedEmailArray[0].userEmail);
+      console.log(parsedEmailArray[0].userPassword);
+
+      navigate("/homePage");
     }
   };
 
-  useEffect(() => {
-    loginHandler();
-  }, []);
-
   return (
     <div className="login">
-      <img src="./images.png" />
-      <input
-        type="email"
-        value={userEmail}
-        onChange={(e) => setUserEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={userPassword}
-        onChange={(e) => setUserPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <button onClick={loginHandler}>Log in</button>
+      <img src="./images.png" alt="logo" />
+      <input ref={inputEmailRef} type="email" placeholder="Email" />
+      <input ref={inputPasswordRef} type="password" placeholder="Password" />
+      <button onClick={LoginHandler}>Log in</button>
     </div>
   );
 };
