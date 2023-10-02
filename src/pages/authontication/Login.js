@@ -53,6 +53,9 @@ const Login = () => {
       navigate("/homePage");
     }
   };
+  useEffect(() => {
+    LoginHandler();
+  }, []);
 
   return (
     <div className="login">
