@@ -11,29 +11,36 @@ import { Avatar } from "@mui/material";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { AuthCountext } from "../../../context/AuthContext";
+import { useEffect } from "react";
 
 function SideBar() {
-  const { userEmail, UserPassword, setUserEmail, setUserPassword } =
-    AuthCountext();
-  console.log(userEmail, "userEmail hast");
-  console.log(UserPassword, "UserPassword hast");
+  const { user, setUser } = AuthCountext();
+  // console.log(userEmail, "userEmail hast");
+  // console.log(UserPassword, "UserPassword hast");
 
   const navigate = useNavigate();
   const logOutHandler = () => {
     localStorage.clear();
-    setUserEmail("");
-    setUserPassword("");
+    // setUserEmail("");
+    // setUserPassword("");
+    setUser("");
     message.success("خارج شدید");
     navigate("/");
   };
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("myArray"));
+    setUser(user);
+    // setUserEmail(userEmail);
+  }, []);
+
   return (
     <div className="sidebar">
       <div className="user__info ">
-        {userEmail ? (
+        {user ? (
           <div>
             <div className="user__email">
               <Avatar></Avatar>
-              <span className="email__text">{userEmail}</span>
+              <span className="email__text">{user[0].userEmail}</span>
             </div>
             <button className="logout__button" onClick={logOutHandler}>
               logout
