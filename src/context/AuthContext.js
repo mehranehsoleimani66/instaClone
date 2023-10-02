@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
 
@@ -7,6 +7,12 @@ export const AuthProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [users, setUsers] = useState([]);
+  const [user, setUser] = useState("");
+  // useEffect(() => {
+  //   // Update the data state in localStorage whenever it changes
+  //   localStorage.setItem("myArray", JSON.stringify(userArrayString));
+  // }, []);
+
   return (
     <AuthContext.Provider
       value={{
@@ -17,7 +23,9 @@ export const AuthProvider = ({ children }) => {
         setUserEmail,
         setUserPassword,
         users,
-        setUsers
+        setUsers,
+        user,
+        setUser
       }}
     >
       {children}
