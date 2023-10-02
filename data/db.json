@@ -1,0 +1,97 @@
+{
+  "posts": [
+    {
+      "postId": "88a181f0-b2c6-4f2d-9d7c-936b30ed4a86",
+      "userName": "marriam__66",
+      "userAvatar": "https://i.pravatar.cc/100",
+      "likesCount": 7,
+      "alreadyLiked": false,
+      "timespamp": "2w",
+      "comments": [
+        {
+          "commentId": "94e0b637-37b9-4233-9cb1-f860cfcf231f",
+          "userName": "Hasan Navaie",
+          "userAvatar": "https://i.pravatar.cc/100",
+          "commentText": ""
+        }
+      ],
+      "postImage": "https://fastly.picsum.photos/id/866/600/400.jpg?hmac=HJKPGrlmng3jwxdqKDC8rTKTDYbRTP_nuCWsgr6WaFY",
+      "postTitle": "A good day",
+      "postBody": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam soluta sapiente doloribus eos quaerat accusantium dolore rem adipisci eveniet. Iusto, a corrupti temporibus delectus mollitia asperiores provident architecto? Tempore?"
+    },
+    {
+      "postId": "88a181f0-b2c6-4f2d-9d7c-936b30ed4a87",
+      "userName": "f_34",
+      "userAvatar": "https://i.pravatar.cc/170",
+      "likesCount": 543,
+      "alreadyLiked": false,
+      "timespamp": "23min",
+      "comments": [
+        {
+          "commentId": "94e0b637-37b9-4233-9cb1-f860cfcf231f",
+          "userName": "Hasan Navaie",
+          "userAvatar": "https://i.pravatar.cc/150",
+          "commentText": ""
+        }
+      ],
+      "postImage": "https://images.pexels.com/photos/5876805/pexels-photo-5876805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "postTitle": "Sample Post",
+      "postBody": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam soluta sapiente doloribus eos quaerat accusantium dolore rem adipisci eveniet. Iusto, a corrupti temporibus delectus mollitia asperiores provident architecto? Tempore?"
+    },
+    {
+      "postId": "88a181f0-b2c6-4f2d-9d7c-936b30ed4a88",
+      "userName": "sara__32",
+      "userAvatar": "https://i.pravatar.cc/120",
+      "likesCount": 128,
+      "alreadyLiked": true,
+      "timespamp": "2d",
+      "comments": [
+        {
+          "commentId": "94e0b637-37b9-4233-9cb1-f860cfcf231f",
+          "userName": "marriam ahmadi",
+          "userAvatar": "https://i.pravatar.cc/200",
+          "commentText": ""
+        }
+      ],
+      "postImage": "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "postTitle": "Sample Post",
+      "postBody": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam soluta sapiente doloribus eos quaerat accusantium dolore rem adipisci eveniet. Iusto, a corrupti temporibus delectus mollitia asperiores provident architecto? Tempore?"
+    }
+  ],
+  "users": [ {
+	  "userId": "1",
+    "userName": "mehraneh",
+    "userEmail": "mehranehsoleymani@gmail.com",
+    "userPassword": "2222"
+  },
+  {
+	  "userId": "2",
+    "userName": "ali",
+    "userEmail": "ali123@gmail.com",
+    "userPassword": "1111"
+  },
+  {
+	  "userId": "3",
+    "userName": "arash",
+    "userEmail": "arash45@gmail.com",
+    "userPassword": "3333"
+  }
+  ],
+  "register":[{
+	  
+  }],
+  "profile": {
+    "name": "typicode"
+  }
+  
+}
+
+
+
+
+
+
+  "profile": {
+    "name": "typicode"
+  }
+}
