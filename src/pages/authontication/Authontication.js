@@ -4,7 +4,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 
 function Authontication() {
-  const [active, setActive] = useState("login");
+  const [active, setActive] = useState("");
   const handelChange = () => {
     setActive(active === "login" ? "signup" : "login");
   };
