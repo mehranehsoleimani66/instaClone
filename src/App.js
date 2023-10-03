@@ -3,23 +3,23 @@ import "./App.css";
 
 // library
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 // // pages
 
 import Authontication from "./pages/authontication/Authontication";
 import HomePage from "./pages/homePage/HomePage";
-// import { AuthCountext } from "./context/AuthContext";
-
-//create useContext
+import Signup from "./pages/authontication/Signup";
+import Login from "./pages/authontication/Login";
 
 function App() {
-  // const { userEmail, userPassword, setUserEmail, setUserPassword } =
-  //   AuthCountext();
   return (
     <div className="App">
       <>
+        <ToastContainer theme="colored"></ToastContainer>
         <Router>
           <Routes>
-            <Route path="/" element={<Authontication />} />
+            <Route path="/" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/homepage" element={<HomePage />} />
           </Routes>
         </Router>
