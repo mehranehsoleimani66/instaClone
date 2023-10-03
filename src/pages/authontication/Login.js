@@ -17,22 +17,22 @@ const Login = () => {
   const inputEmailRef = useRef(null);
   const inputPasswordRef = useRef(null);
   const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/users")
       .then((res) => setUsers(res.data))
-
+      // .then((res) => console.log(res.data, "kkkk"))
       .catch((err) => console.log(err));
   }, []);
 
   const LoginHandler = () => {
-    console.log(users[0]);
     let user = users?.filter(
       (u) =>
         u.userEmail === inputEmailRef.current.value &&
         u.userPassword === inputPasswordRef.current.value
     );
-
+    console.log(user, "user");
     if (user.length > 0) {
       console.log(user, "hastam");
 
@@ -53,16 +53,49 @@ const Login = () => {
       navigate("/homePage");
     }
   };
-  useEffect(() => {
-    LoginHandler();
-  }, []);
+  // useEffect(() => {
+  //   LoginHandler();
+  // }, []);
 
   return (
-    <div className="login">
-      <img src="./images.png" alt="logo" />
-      <input ref={inputEmailRef} type="email" placeholder="Email" />
-      <input ref={inputPasswordRef} type="password" placeholder="Password" />
-      <button onClick={LoginHandler}>Log in</button>
+    <div className="login-page">
+      <div className="login_left">
+        <img
+          src="https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones.png?__makehaste_cache_breaker=HOgRclNOosk"
+          alt=""
+        />
+      </div>
+      <div className="login_right">
+        <div className="login_component ">
+          <img src="./images.png" />
+
+          <label>
+            User Email<span className="errmsg">*</span>
+          </label>
+          <input
+            ref={inputEmailRef}
+            type="email"
+            onChange={(e) => setUserEmail(e.target.value)}
+          />
+
+          <label>
+            User Password<span className="errmsg">*</span>
+          </label>
+          <input
+            ref={inputPasswordRef}
+            type="password"
+            onChange={(e) => setUserPassword(e.target.value)}
+          />
+
+          <button onClick={LoginHandler}>login</button>
+        </div>
+
+        <div className="login_more">
+          <span>
+            Do'nt You Have Account ?<a href="/signup">log in</a>
+          </span>
+        </div>
+      </div>
     </div>
   );
 };
