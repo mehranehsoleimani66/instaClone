@@ -25,7 +25,7 @@ function SideBar() {
     // setUserPassword("");
     setUser("");
     message.success("خارج شدید");
-    navigate("/");
+    navigate("/login");
   };
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("myArray"));
