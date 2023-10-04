@@ -185,7 +185,7 @@ function Signup() {
       </div>
       <div className="sign_right">
         <div className="sign_component ">
-          <img src="./images.png" />
+          <img src="./images/images.png" />
           <label>
             User Name<span className="errmsg">*</span>
           </label>
@@ -219,7 +219,7 @@ function Signup() {
 
         <div className="sign_more">
           <span>
-            {/* Do'nt You Have Account ?<a href="/login">log in</a> */}
+            Do You Have an Account ?<a href="/login">Log In</a>
           </span>
         </div>
       </div>
