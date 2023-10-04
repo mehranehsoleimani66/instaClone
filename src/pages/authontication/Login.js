@@ -18,15 +18,20 @@ const Login = () => {
   const inputPasswordRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    axios
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3000/users")
+  //     .then((res) => setUsers(res.data))
+  //     // .then((res) => console.log(res.data, "kkkk"))
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  const LoginHandler = async () => {
+    await axios
       .get("http://localhost:3000/users")
       .then((res) => setUsers(res.data))
       // .then((res) => console.log(res.data, "kkkk"))
       .catch((err) => console.log(err));
-  }, []);
-
-  const LoginHandler = () => {
     let user = users?.filter(
       (u) =>
         u.userEmail === inputEmailRef.current.value &&
@@ -53,9 +58,9 @@ const Login = () => {
       navigate("/homePage");
     }
   };
-  // useEffect(() => {
-  //   LoginHandler();
-  // }, []);
+  useEffect(() => {
+    LoginHandler();
+  }, []);
 
   return (
     <div className="login-page">
@@ -67,7 +72,7 @@ const Login = () => {
       </div>
       <div className="login_right">
         <div className="login_component ">
-          <img src="./images.png" />
+          <img src="./images/images.png" />
 
           <label>
             User Email<span className="errmsg">*</span>
@@ -92,7 +97,7 @@ const Login = () => {
 
         <div className="login_more">
           <span>
-            Do'nt You Have Account ?<a href="/signup">log in</a>
+            Do'nt You Have Account ?<a href="/">Sign Up</a>
           </span>
         </div>
       </div>
