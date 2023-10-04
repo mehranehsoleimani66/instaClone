@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // // pages
 
-import Authontication from "./pages/authontication/Authontication";
 import HomePage from "./pages/homePage/HomePage";
 import Signup from "./pages/authontication/Signup";
 import Login from "./pages/authontication/Login";
