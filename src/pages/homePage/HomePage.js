@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomePage.css";
-import SideBar from "../homePage/navigation/SideBar";
-import TimeLine from "../homePage/timeLine/TimeLine";
+import SideBar from "./components/SideBar";
+import TimeLine from "./components/timeLine/TimeLine";
 
 function HomePage() {
   return (
