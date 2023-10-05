@@ -1,40 +1,62 @@
-.post{
-    width: 550px;
-    margin: 30px 40px 50px 40px;
+.post {
+  width: 550px;
+  margin: 30px 40px 50px 40px;
 }
-.post_header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin-bottom: 10px;
+.post_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 10px;
 }
-.post_headerAuthor{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    font-weight: bolder;
-    
+.post_headerAuthor {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  font-weight: bolder;
 }
-.post_headerAuthor > span{
-    color:gray;
-    font-size: 15px;
-    margin-left: 5px;
+.post_headerAuthor > span {
+  color: gray;
+  font-size: 15px;
+  margin-left: 5px;
 }
-.post-image img{
-    width: 100%;
-    border-radius: 6px;
-    border: 0.6px solid rgba(128,128,128,0.156);
+.post-image img {
+  width: 100%;
+  border-radius: 6px;
+  border: 0.6px solid rgba(128, 128, 128, 0.156);
 }
-.post_footerIcons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+.post_footerIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.post_icon{
-    padding: 7px;
-    cursor: pointer;
-    font-size: 30px;
+.post_icon {
+  cursor: pointer;
+  font-size: 40px;
+}
+.post_footerMainIcons {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
 
+  gap: 5px;
+}
+.post-footer {
+  line-height: 20px;
+}
+.post_title {
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.count_section {
+  font-size: 15px;
+  font-size: bolder;
+}
+.count_section span {
+  font-style: italic;
+  color: gainsboro;
+  font-size: 15px;
 }
