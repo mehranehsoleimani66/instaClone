@@ -28,7 +28,8 @@ function Suggestion() {
                   width: "50px",
                   height: "50px",
                   borderRadius: "50px",
-                  paddingRight: "5px"
+                  paddingRight: "5px",
+                  border: "3px solid red"
                 }}
                 alt=""
               />
