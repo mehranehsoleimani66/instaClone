@@ -9,7 +9,7 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Avatar } from "@mui/material";
 import { message } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthCountext } from "../../../context/AuthContext";
 import { useEffect } from "react";
 
@@ -35,25 +35,15 @@ function SideBar() {
 
   return (
     <div className="sidebar">
-      <div className="user__info ">
-        {user ? (
-          <div>
-            <div className="user__email">
-              <Avatar></Avatar>
-              <span className="email__text">{user[0].userEmail}</span>
-            </div>
-            <button className="logout__button" onClick={logOutHandler}>
-              logout
-            </button>
-          </div>
-        ) : null}
-      </div>
-      <img className="sidebar_logo" src="./images.png" alt="" />
+      <img className="sidebar_logo" src="./images/logo.png" alt="" />
       <div className="sidebar-buttons">
-        <button className="sidebar_button">
-          <HomeIcon />
-          <span>Home</span>
-        </button>
+        <Link to="/profile">
+          <button className="sidebar_button">
+            <HomeIcon />
+            <span>profile</span>
+          </button>
+        </Link>
+
         <button className="sidebar_button">
           <SearchIcon />
           <span>Search</span>
@@ -78,6 +68,24 @@ function SideBar() {
           <AddCircleOutlineIcon />
           <span>Create</span>
         </button>
+        <div className="user__info ">
+          {user ? (
+            <div className="sidebar_button">
+              <button className="logout__button" onClick={logOutHandler}>
+                logout
+              </button>
+              <div className="user__email">
+                <Avatar
+                  style={{
+                    border: "3px solid red"
+                  }}
+                  src="./images/profileimage.png"
+                ></Avatar>
+                <span className="email__text">{user[0].userEmail}</span>
+              </div>
+            </div>
+          ) : null}
+        </div>
         <div className="sidebar_more">
           <button className="sidebar_button">
             <MenuIcon />
