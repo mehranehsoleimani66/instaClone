@@ -43,16 +43,18 @@ const Post = ({
       <div className="post-footer">
         <div className="post_footerIcons">
           <div className="post_footerMainIcons">
-            <FavoriteBorderIcon className="post_icon" />
+            <FavoriteBorderIcon className="post_icon" active />
             <ChatIcon className="post_icon" />
             <TelegramIcon className="post_icon" />
           </div>
           <div className="post_footerSaveIcon">
-            <BookmarkBorderIcon />
+            <BookmarkBorderIcon className="post_icon" />
           </div>
         </div>
-        <div>{postTitle}</div>
-        Liked by {likesCount} people
+        <div className="post_title">{postTitle}</div>
+        <div className="count_section">
+          Liked by <span>{likesCount}</span> people
+        </div>
       </div>
     </div>
   );
