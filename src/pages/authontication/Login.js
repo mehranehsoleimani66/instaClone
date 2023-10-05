@@ -11,36 +11,28 @@ const Login = () => {
     setUserPassword,
     userPassword,
     users,
-    setUsers
+    setUsers,
+    user,
+    setUser
   } = AuthCountext();
 
   const inputEmailRef = useRef(null);
   const inputPasswordRef = useRef(null);
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3000/users")
-  //     .then((res) => setUsers(res.data))
-  //     // .then((res) => console.log(res.data, "kkkk"))
-  //     .catch((err) => console.log(err));
-  // }, []);
-
-  const LoginHandler = async () => {
-    await axios
+  const LoginHandler = () => {
+    axios
       .get("http://localhost:3000/users")
       .then((res) => setUsers(res.data))
-      // .then((res) => console.log(res.data, "kkkk"))
       .catch((err) => console.log(err));
-    let user = users?.filter(
+    const user = users.filter(
       (u) =>
         u.userEmail === inputEmailRef.current.value &&
         u.userPassword === inputPasswordRef.current.value
     );
-    console.log(user, "user");
+    setUser(user);
     if (user.length > 0) {
       console.log(user, "hastam");
-
       const userArrayString = JSON.stringify(user);
       localStorage.setItem("myArray", userArrayString);
       console.log(userArrayString, "myArray");
@@ -54,13 +46,19 @@ const Login = () => {
 
       console.log(parsedEmailArray[0].userEmail);
       console.log(parsedEmailArray[0].userPassword);
-
       navigate("/homePage");
     }
   };
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3000/users")
+  //     .then((res) => setUsers(res.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
   useEffect(() => {
     LoginHandler();
-  }, []);
+  }, [user]);
 
   return (
     <div className="login-page">
