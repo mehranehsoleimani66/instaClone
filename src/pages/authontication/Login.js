@@ -20,8 +20,8 @@ const Login = () => {
   const inputPasswordRef = useRef(null);
   const navigate = useNavigate();
 
-  const LoginHandler = () => {
-    axios
+  const LoginHandler = async () => {
+    await axios
       .get("http://localhost:3000/users")
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
@@ -46,19 +46,10 @@ const Login = () => {
 
       console.log(parsedEmailArray[0].userEmail);
       console.log(parsedEmailArray[0].userPassword);
+
       navigate("/homePage");
     }
   };
-
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:3000/users")
-  //     .then((res) => setUsers(res.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
-  useEffect(() => {
-    LoginHandler();
-  }, [user]);
 
   return (
     <div className="login-page">
