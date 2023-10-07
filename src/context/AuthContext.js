@@ -8,10 +8,6 @@ export const AuthProvider = ({ children }) => {
   const [userPassword, setUserPassword] = useState("");
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState("");
-  // useEffect(() => {
-  //   // Update the data state in localStorage whenever it changes
-  //   localStorage.setItem("myArray", JSON.stringify(userArrayString));
-  // }, []);
 
   return (
     <AuthContext.Provider
