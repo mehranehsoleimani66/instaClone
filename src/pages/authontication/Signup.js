@@ -11,26 +11,64 @@ function Signup() {
   const inputPasswordRef = useRef(null);
   const inputUsernameRef = useRef(null);
 
+  const IsValid = () => {
+    let isProceed = true;
+    let errormessage = "please enter the value in";
+    if (
+      inputUsernameRef.current.value === null ||
+      inputUsernameRef.current.value === ""
+    ) {
+      isProceed = false;
+      errormessage += "userName";
+    }
+    if (
+      inputEmailRef.current.value === null ||
+      inputEmailRef.current.value === ""
+    ) {
+      isProceed = false;
+      errormessage += "userEmail";
+    }
+    if (
+      inputPasswordRef.current.value === null ||
+      inputPasswordRef.current.value === ""
+    ) {
+      isProceed = false;
+      errormessage += "userPaaword";
+    }
+
+    if (!isProceed) {
+      toast.warning(errormessage);
+    }
+    // } else {
+    //   if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(inputEmailRef)) {
+    //   } else isProceed = false;
+    //   toast.warning("please enter the valid ");
+    // }
+    return isProceed;
+  };
+
   const registerHandler = async (e) => {
-    e.preventDefault();
-    const newUser = {
-      id: Math.random(),
-      userName: inputUsernameRef.current.value,
-      userPassword: inputPasswordRef.current.value,
-      userEmail: inputEmailRef.current.value
-    };
-    await axios
-      .post("http://localhost:3000/users", newUser)
-      .then((response) => {
-        toast.success("Registered Success");
-        console.log(response);
-        navigate("/login");
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error("Registered faild");
-        console.log("faild");
-      });
+    if (IsValid()) {
+      e.preventDefault();
+      const newUser = {
+        id: Math.random(),
+        userName: inputUsernameRef.current.value,
+        userPassword: inputPasswordRef.current.value,
+        userEmail: inputEmailRef.current.value
+      };
+      await axios
+        .post("http://localhost:3000/users", newUser)
+        .then((response) => {
+          toast.success("Registered Success");
+          console.log(response);
+          navigate("/login");
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error("Registered faild");
+          console.log("faild");
+        });
+    }
   };
 
   return (
@@ -43,16 +81,16 @@ function Signup() {
       </div>
       <div className="sign_right">
         <div className="sign_component ">
-          <img src="./images/images.png" />
+          <img src="./images/logo.png" />
           <label>
             User Name<span className="errmsg">*</span>
           </label>
-          <input type="text" placeholder="Username" ref={inputUsernameRef} />
+          <input type="text" ref={inputUsernameRef} />
 
           <label>
             User Email<span className="errmsg">*</span>
           </label>
-          <input ref={inputEmailRef} />
+          <input type="email" ref={inputEmailRef} />
 
           <label>
             User Password<span className="errmsg">*</span>
