@@ -29,7 +29,7 @@ function Suggestion() {
                   height: "50px",
                   borderRadius: "50px",
                   paddingRight: "5px",
-                  border: "3px solid red"
+                  border: "3px solid green"
                 }}
                 alt=""
               />
