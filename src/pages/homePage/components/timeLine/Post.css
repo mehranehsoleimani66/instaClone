@@ -15,8 +15,14 @@
   flex-direction: row;
   font-weight: bolder;
 }
-.post_headerAuthor > span {
+.userName {
+  font-size: 25px;
+}
+.timespamp {
+  font-size: 10px;
   color: gray;
+}
+.post_headerAuthor > span {
   font-size: 15px;
   margin-left: 5px;
 }
@@ -31,11 +37,14 @@
   justify-content: space-between;
   align-items: center;
 }
-.post_icon {
+.postIcon {
   cursor: pointer;
   font-size: 40px;
 }
-.post_footerMainIcons {
+.postIcon:hover {
+  cursor: pointer;
+}
+.post_iconsMain {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -44,11 +53,12 @@
   gap: 5px;
 }
 .post-footer {
-  line-height: 20px;
+  line-height: 30px;
 }
+
 .post_title {
   font-style: italic;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 5px;
 }
 .count_section {
