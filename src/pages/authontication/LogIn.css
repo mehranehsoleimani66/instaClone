@@ -6,10 +6,12 @@
   margin: 0px 30px 0px 30px;
 }
 .login_left {
+  margin-top: 20px;
   flex: 0.5;
   align-items: center;
 }
 .login_right {
+  margin-top: 20px;
   flex: 0.5;
 }
 .login_component {
@@ -36,9 +38,17 @@
   margin-bottom: 20px;
   color: white;
 }
+.login_right > .login_component label {
+  font-size: 20px;
+  display: flex;
+  align-items: left;
+  margin-bottom: 2px;
+}
+
 .login_right > .login_component input:focus {
   outline: 1px solid gray;
 }
+
 .login_right > .login_component button {
   border-radius: 8px;
   padding: 12px;
