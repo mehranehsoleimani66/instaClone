@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Post.css";
 import { Avatar } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
@@ -16,6 +16,15 @@ const Post = ({
   postBody,
   timespamp
 }) => {
+  const [like, setLikesCount] = useState(likesCount);
+  const [isLiked, setIsLiked] = useState(false);
+  const [buttonStyle, setButtonStyle] = useState({});
+  const likeHandleClick = () => {
+    setLikesCount(isLiked ? like - 1 : like + 1);
+    setButtonStyle(isLiked ? { color: "white" } : { color: "red" });
+    setIsLiked(!isLiked);
+  };
+
   return (
     <div className="post">
       <div className="post_header">
@@ -29,10 +38,9 @@ const Post = ({
               borderRadius: "50px",
               paddingRight: "5px"
             }}
-            alt="User Avatar"
           />
-          {userName}
-          <span>{timespamp}</span>
+          <span className="userName">{userName}</span>
+          <span className="timespamp">{timespamp}</span>
         </div>
         <MoreHorizIcon />
       </div>
@@ -42,18 +50,26 @@ const Post = ({
       </div>
       <div className="post-footer">
         <div className="post_footerIcons">
-          <div className="post_footerMainIcons">
-            <FavoriteBorderIcon className="post_icon" active />
-            <ChatIcon className="post_icon" />
-            <TelegramIcon className="post_icon" />
+          <div className="post_iconsMain">
+            <div style={{ padding: "10px" }}>
+              <div
+                onClick={likeHandleClick}
+                disabled={isLiked}
+                style={buttonStyle}
+              >
+                <FavoriteBorderIcon className="postIcon" />
+              </div>
+            </div>
+            <ChatIcon className="postIcon" />
+            <TelegramIcon className="postIcon" />
           </div>
           <div className="post_footerSaveIcon">
-            <BookmarkBorderIcon className="post_icon" />
+            <BookmarkBorderIcon className="postIcon" />
           </div>
         </div>
         <div className="post_title">{postTitle}</div>
         <div className="count_section">
-          Liked by <span>{likesCount}</span> people
+          Liked by <span>{like}</span> people
         </div>
       </div>
     </div>
