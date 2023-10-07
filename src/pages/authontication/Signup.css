@@ -1,4 +1,5 @@
 .signup-page {
+  margin: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -6,10 +7,12 @@
   margin: 0px 30px 0px 30px;
 }
 .sign_left {
+  padding-top: 20px;
   flex: 0.5;
   align-items: center;
 }
 .sign_right {
+  padding-top: 20px;
   flex: 0.5;
 }
 .sign_right > .sign_component {
@@ -35,6 +38,12 @@
   padding: 12px;
   margin-bottom: 20px;
   color: white;
+}
+.sign_right > .sign_component label {
+  font-size: 20px;
+  display: flex;
+  align-items: left;
+  margin-bottom: 2px;
 }
 .sign_right > .sign_component input:focus {
   outline: 1px solid gray;
