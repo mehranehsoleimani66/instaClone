@@ -1,20 +1,12 @@
 import "./Login.css";
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { AuthCountext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const {
-    userEmail,
-    setUserEmail,
-    setUserPassword,
-    userPassword,
-    users,
-    setUsers,
-    user,
-    setUser
-  } = AuthCountext();
+  const { setUserEmail, setUserPassword, users, setUsers, setUser } =
+    AuthCountext();
 
   const inputEmailRef = useRef(null);
   const inputPasswordRef = useRef(null);
@@ -61,7 +53,7 @@ const Login = () => {
       </div>
       <div className="login_right">
         <div className="login_component ">
-          <img src="./images/images.png" />
+          <img src="./images/logo.png" />
 
           <label>
             User Email<span className="errmsg">*</span>
