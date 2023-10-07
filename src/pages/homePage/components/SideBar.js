@@ -37,10 +37,19 @@ function SideBar() {
     <div className="sidebar">
       <img className="sidebar_logo" src="./images/logo.png" alt="" />
       <div className="sidebar-buttons">
-        <Link to="/profile">
+        <Link to="/profile" style={{ textDecoration: "none" }}>
           <button className="sidebar_button">
-            <HomeIcon />
-            <span>profile</span>
+            {user[0].userName ? (
+              <div className="user__email">
+                <Avatar
+                  style={{
+                    border: "3px solid green"
+                  }}
+                  src="./images/profile.png"
+                ></Avatar>
+                <span className="email__text">{user[0].userName}</span>
+              </div>
+            ) : null}
           </button>
         </Link>
 
@@ -74,20 +83,11 @@ function SideBar() {
               <button className="logout__button" onClick={logOutHandler}>
                 logout
               </button>
-              <div className="user__email">
-                <Avatar
-                  style={{
-                    border: "3px solid red"
-                  }}
-                  src="./images/profileimage.png"
-                ></Avatar>
-                <span className="email__text">{user[0].userEmail}</span>
-              </div>
             </div>
           ) : null}
         </div>
         <div className="sidebar_more">
-          <button className="sidebar_button">
+          <button>
             <MenuIcon />
             <span>More</span>
           </button>
