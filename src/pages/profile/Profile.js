@@ -5,17 +5,25 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import FileCopyOutlinedIcon from "@mui/icons-material/FileCopyOutlined";
 import SettingsIcon from "@mui/icons-material/Settings";
 import VideoCameraFrontRoundedIcon from "@mui/icons-material/VideoCameraFrontRounded";
+import { AuthCountext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 function Profile() {
+  const { user } = AuthCountext();
   return (
     <body>
       <header>
+        <span>
+          <Link to="/homepage" className="profile-button">
+            Home
+          </Link>
+        </span>
         <div className="container">
           <div className="profile">
             <div className="profile-image">
-              <img src="./images/profileimage.png" alt="user" className="" />
+              <img src="./images/profile.png" alt="user" className="" />
             </div>
             <div className="profile-user-settings">
-              <h1 className="profile-user-name">john@2006</h1>
+              <h1 className="profile-user-name">{user[0].userName}</h1>
               <button className="btn profile-edit-btn">Edit Profile</button>
               <button
                 className="btn profile-settings-btn"
@@ -39,8 +47,8 @@ function Profile() {
             </div>
             <div className="profile-bio ">
               <p>
-                <span className="profile-real-name">John Doe</span>Enjoy your
-                moments 🇨🇦🌕📖⛹
+                <span className="profile-real-name">{user[0].userName}</span>
+                Enjoy your moments 🇨🇦🌕📖⛹
               </p>
             </div>
           </div>
