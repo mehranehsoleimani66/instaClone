@@ -1,16 +1,15 @@
-import React, { useRef } from "react";
 import "./Signup.css";
 import axios from "axios";
-
-import { useNavigate } from "react-router";
+import React, { useRef } from "react";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 function Signup() {
   const navigate = useNavigate();
   const inputEmailRef = useRef(null);
   const inputPasswordRef = useRef(null);
   const inputUsernameRef = useRef(null);
-
+  // check the value of inputs (userName, userEmail,userPassword) which should be valid
   const IsValid = () => {
     let isProceed = true;
     let errormessage = "please enter the value in";
@@ -39,14 +38,10 @@ function Signup() {
     if (!isProceed) {
       toast.warning(errormessage);
     }
-    // } else {
-    //   if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(inputEmailRef)) {
-    //   } else isProceed = false;
-    //   toast.warning("please enter the valid ");
-    // }
     return isProceed;
   };
 
+  // signup handler
   const registerHandler = async (e) => {
     if (IsValid()) {
       e.preventDefault();
