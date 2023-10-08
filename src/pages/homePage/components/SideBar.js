@@ -1,28 +1,31 @@
+// import style
 import "./SideBar.css";
-import HomeIcon from "@mui/icons-material/Home";
+//import ants library
+import { message } from "antd";
+
+import { useEffect } from "react";
+
+import { Link, useNavigate } from "react-router-dom";
+//import custom hook
+import { AuthCountext } from "../../../context/AuthContext";
+
+//import mui liabrary
+import { Avatar } from "@mui/material";
+import ChatIcon from "@mui/icons-material/Chat";
+import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ExploreIcon from "@mui/icons-material/Explore";
 import SlideshowIcon from "@mui/icons-material/Slideshow";
-import ChatIcon from "@mui/icons-material/Chat";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Avatar } from "@mui/material";
-import { message } from "antd";
-import { Link, useNavigate } from "react-router-dom";
-import { AuthCountext } from "../../../context/AuthContext";
-import { useEffect } from "react";
 
 function SideBar() {
   const { user, setUser } = AuthCountext();
-  // console.log(userEmail, "userEmail hast");
-  // console.log(UserPassword, "UserPassword hast");
 
   const navigate = useNavigate();
   const logOutHandler = () => {
     localStorage.clear();
-    // setUserEmail("");
-    // setUserPassword("");
+
     setUser("");
     message.success("خارج شدید");
     navigate("/login");
@@ -30,7 +33,6 @@ function SideBar() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("myArray"));
     setUser(user);
-    // setUserEmail(userEmail);
   }, []);
 
   return (
