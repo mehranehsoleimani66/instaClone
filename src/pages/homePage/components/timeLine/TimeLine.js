@@ -3,13 +3,14 @@ import "./timeline.css";
 import Suggestion from "../Suggestion";
 import axios from "axios";
 import Post from "./Post";
+
+// create timeline component for get Post component's data from database
 const TimeLine = () => {
   const [posts, setPost] = useState([]);
   const getPostsHandler = async () => {
     const response = await axios.get("http://localhost:3000/posts");
     const { data } = response;
     setPost(data);
-    // console.log(data,'data')
   };
 
   useEffect(() => {
