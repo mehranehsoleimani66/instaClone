@@ -79,7 +79,7 @@ function SideBar() {
         </button>
         <div className="user__info ">
           {user ? (
-            <div className="sidebar_button">
+            <div>
               <button className="logout__button" onClick={logOutHandler}>
                 logout
               </button>
