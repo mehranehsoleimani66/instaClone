@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
 import "./Suggestion.css";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 function Suggestion() {
   const [suggestion, setSuggestion] = useState([]);
+
   const getSuggestionHandler = async () => {
     const response = await axios.get("http://localhost:3000/posts");
     const { data } = response;
