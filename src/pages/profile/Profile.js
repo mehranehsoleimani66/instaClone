@@ -14,7 +14,7 @@ function Profile() {
       <header>
         <span>
           <Link to="/homepage" className="profile-button">
-            Home
+            <span>Home</span>
           </Link>
         </span>
         <div className="container">
