@@ -1,24 +1,25 @@
-import React, { useState } from "react";
 import "./Post.css";
-import { Avatar } from "@mui/material";
+import React, { useState } from "react";
 import ChatIcon from "@mui/icons-material/Chat";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
 const Post = ({
   userName,
   userAvatar,
   likesCount,
-  commentText,
   postImage,
   postTitle,
-  postBody,
   timespamp
 }) => {
+  // define states for like button
   const [like, setLikesCount] = useState(likesCount);
   const [isLiked, setIsLiked] = useState(false);
   const [buttonStyle, setButtonStyle] = useState({});
+
+  // define likeClick handler
   const likeHandleClick = () => {
     setLikesCount(isLiked ? like - 1 : like + 1);
     setButtonStyle(isLiked ? { color: "white" } : { color: "red" });
@@ -29,7 +30,6 @@ const Post = ({
     <div className="post">
       <div className="post_header">
         <div className="post_headerAuthor">
-          {/* <Avatar >{userAvatar}</Avatar> */}
           <img
             src={userAvatar}
             style={{
