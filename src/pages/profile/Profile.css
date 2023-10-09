@@ -191,7 +191,7 @@ img {
   margin: 0 auto;
   animation: loader 500ms linear infinite;
 }
-.profile-button {
+.home-button {
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -204,17 +204,15 @@ img {
   border-radius: 15px;
   width: 10%;
   font-size: 20px;
-
-  font-style: none;
-}
-.profile-button {
-  background: rgba(255, 255, 255, 0.128);
+  background: rgba(25, 216, 95, 0.925);
   cursor: pointer;
-
+  font-style: none;
   margin: 20px;
   text-decoration: none;
 }
-.profile-button span {
+.profile-button {
+}
+.home-button span {
   display: flex;
   color: green;
   text-align: center;

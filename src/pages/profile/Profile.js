@@ -13,7 +13,7 @@ function Profile() {
     <body>
       <header>
         <span>
-          <Link to="/homepage" className="profile-button">
+          <Link to="/homepage" className="home-button">
             <span>Home</span>
           </Link>
         </span>
