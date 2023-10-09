@@ -1,0 +1,86 @@
+.signup-page {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 30px 0px 30px;
+}
+.sign_left {
+  padding-top: 20px;
+  flex: 0.5;
+  align-items: center;
+}
+.sign_right {
+  padding-top: 20px;
+  flex: 0.5;
+}
+.sign_right > .sign_component {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid gray;
+  padding: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.sign_right > .sign_component img {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+.sign_right > .sign_component input {
+  background-color: #ffffff24;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 12px;
+  margin-bottom: 20px;
+  color: white;
+}
+.sign_right > .sign_component label {
+  font-size: 20px;
+  display: flex;
+  align-items: left;
+  margin-bottom: 2px;
+}
+.sign_right > .sign_component input:focus {
+  outline: 1px solid gray;
+}
+.sign_right > .sign_component button {
+  border-radius: 8px;
+  padding: 12px;
+  border: 0;
+  color: white;
+  background-color: #0096f6;
+}
+.sign_right > .sign_component button:hover {
+  cursor: pointer;
+}
+.errmsg {
+  color: red;
+}
+
+.sign_more {
+  border: 1px solid gray;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  margin-top: 15px;
+}
+.sign_more > span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.sign_more > span > a {
+  border: 0;
+  background: 0;
+  color: #0095f6;
+  font-weight: bolder;
+  padding-left: 5px;
+}
+.sign_more > span > a:hover {
+  cursor: pointer;
+}
