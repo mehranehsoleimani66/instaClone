@@ -1,19 +1,20 @@
-import "./HomePage.css";
-import React from "react";
-import SideBar from "./components/SideBar";
-import TimeLine from "./components/timeLine/TimeLine";
+import './HomePage.css'
+import React from 'react'
+
+import Posts from './Posts'
+import SideBar from './SideBar'
 
 function HomePage() {
   return (
-    <div className="homepage">
-      <div className="homepage_nav">
+    <div className='homepage'>
+      <div className='homepage_nav'>
         <SideBar />
       </div>
-      <div className="homepage_timeline">
-        <TimeLine />
+      <div className='homepage_timeline'>
+        <Posts />
       </div>
     </div>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage
