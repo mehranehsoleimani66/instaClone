@@ -1,13 +1,13 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from 'react'
 
-const AuthContext = createContext();
+const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
-  const [users, setUsers] = useState([]);
-  const [user, setUser] = useState("");
+  const [userName, setUserName] = useState('')
+  const [userEmail, setUserEmail] = useState('')
+  const [userPassword, setUserPassword] = useState('')
+  const [users, setUsers] = useState([])
+  const [user, setUser] = useState('')
 
   return (
     <AuthContext.Provider
@@ -26,10 +26,10 @@ export const AuthProvider = ({ children }) => {
     >
       {children}
     </AuthContext.Provider>
-  );
-};
+  )
+}
 const AuthCountext = () => {
-  return useContext(AuthContext);
-};
+  return useContext(AuthContext)
+}
 
-export { AuthProvider as MyAuthProvider, AuthCountext };
+export { AuthProvider as MyAuthProvider, AuthCountext }
