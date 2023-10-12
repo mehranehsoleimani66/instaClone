@@ -3,7 +3,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0px 30px 0px 30px;
+  /* margin: 0px 30px 0px 30px;
+  border: 1px solid red; */
 }
 .login_left {
   margin-top: 20px;
@@ -36,7 +37,6 @@
   border-radius: 3px;
   padding: 12px;
   margin-bottom: 20px;
-  color: white;
 }
 .login_right > .login_component label {
   font-size: 20px;
@@ -47,6 +47,12 @@
 
 .login_right > .login_component input:focus {
   outline: 1px solid gray;
+}
+.inputColorDark {
+  color: white;
+}
+.inputColorLight {
+  color: rgb(10, 10, 10);
 }
 
 .login_right > .login_component button {
