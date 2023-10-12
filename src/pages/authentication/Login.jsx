@@ -4,8 +4,12 @@ import axios from 'axios'
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { AuthCountext } from '../../context/AuthContext'
+import { useThemeContext } from '../../context/ThemeContext'
 
 const Login = () => {
+  const theme = useThemeContext()
+  const darkMode = theme.darkMode
+
   const { setUserEmail, setUserPassword, users, setUsers, setUser } = AuthCountext()
 
   const inputEmailRef = useRef(null)
@@ -50,17 +54,27 @@ const Login = () => {
         </div>
         <div className='login_right'>
           <div className='login_component '>
-            <img src='./images/logo.png' />
+            <img src={`${darkMode ? './images/logo.png' : './images/Logo-Iight.png'}`} />
 
             <label>
               User Email<span className='errmsg'>*</span>
             </label>
-            <input ref={inputEmailRef} type='email' onChange={(e) => setUserEmail(e.target.value)} />
+            <input
+              className={`${darkMode ? 'inputColorDark' : 'inputColorLight'}`}
+              ref={inputEmailRef}
+              type='email'
+              onChange={(e) => setUserEmail(e.target.value)}
+            />
 
             <label>
               User Password<span className='errmsg'>*</span>
             </label>
-            <input ref={inputPasswordRef} type='password' onChange={(e) => setUserPassword(e.target.value)} />
+            <input
+              ref={inputPasswordRef}
+              className={`${darkMode ? 'inputColorDark' : 'inputColorLight'}`}
+              type='password'
+              onChange={(e) => setUserPassword(e.target.value)}
+            />
 
             <button onClick={LoginHandler}>login</button>
           </div>
