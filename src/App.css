@@ -1,7 +1,19 @@
 html {
-  background-color: black;
-  color: white;
+  /* background-color: rgb(241, 236, 236);
+  color: white; */
+  /* height: 100vh; */
 }
+.App-dark {
+  background: black;
+  color: white;
+  height: 100vh;
+}
+.App-light {
+  background: white;
+  color: black;
+  height: 100vh;
+}
+
 .css-i4bv87-MuiSvgIcon-root {
   width: 3rem;
   height: 3rem;
@@ -10,6 +22,7 @@ html {
 }
 body {
   margin: 0;
+
   /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif; */
 
