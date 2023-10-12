@@ -1,8 +1,11 @@
 import './Suggestion.css'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useThemeContext } from '../../context/ThemeContext'
 
 function Suggestion() {
+  const theme = useThemeContext()
+  const darkMode = theme.darkMode
   const [suggestion, setSuggestion] = useState([])
 
   const getSuggestionHandler = async () => {
@@ -16,7 +19,7 @@ function Suggestion() {
   }, [])
 
   return (
-    <div className='suggestion'>
+    <div className={`seggestion ${darkMode ? 'seggestionColorDark' : 'seggestionColorLight'}`}>
       <div className='suggestion_title'>Suggestion for you</div>
 
       {suggestion.map((item) => (
@@ -29,7 +32,7 @@ function Suggestion() {
                   width: '50px',
                   height: '50px',
                   borderRadius: '50px',
-                  paddingRight: '5px',
+
                   border: '3px solid green'
                 }}
                 alt=''
