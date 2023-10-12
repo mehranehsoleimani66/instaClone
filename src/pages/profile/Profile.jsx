@@ -7,10 +7,13 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import VideoCameraFrontRoundedIcon from '@mui/icons-material/VideoCameraFrontRounded'
 import { AuthCountext } from '../../context/AuthContext'
 import { Link } from 'react-router-dom'
+import { useThemeContext } from '../../context/ThemeContext'
 function Profile() {
   const { user } = AuthCountext()
+  const theme = useThemeContext()
+  const darkMode = theme.darkMode
   return (
-    <body>
+    <div className={`${darkMode ? 'profileColorDark' : 'profileColorLight'}`}>
       <header>
         <span>
           <Link to='/homepage' className='home-button'>
@@ -19,16 +22,25 @@ function Profile() {
         </span>
         <div className='container'>
           <div className='profile'>
-            <div className='profile-image'>
-              <img src='./images/profile.png' alt='user' className='' />
+            <div
+              className='p'
+              style={{ display: 'flex', flexDirection: 'column', gap: '10px', justifyContent: 'start', alignItems: 'start' }}
+            >
+              <div className='profile-image'>
+                <img src='./images/profile.png' alt='user' />
+              </div>
+              <div className='profile-user-settings'>
+                <h1 className='profile-user-name'>{user[0].userName}</h1>
+                <button className='btn profile-edit-btn'>Edit Profile</button>
+                <button className='btn profile-settings-btn' aria-label='Profile Settings'>
+                  <SettingsIcon aria-aria-hidden />
+                </button>
+              </div>
+              <div className='profile-bio '>
+                <span className='profile-real-name'> Enjoy your moments 🇨🇦🌕📖⛹</span>
+              </div>
             </div>
-            <div className='profile-user-settings'>
-              <h1 className='profile-user-name'>{user[0].userName}</h1>
-              <button className='btn profile-edit-btn'>Edit Profile</button>
-              <button className='btn profile-settings-btn' aria-label='Profile Settings'>
-                <SettingsIcon aria-aria-hidden />
-              </button>
-            </div>
+
             <div className='profile-stats'>
               <ul>
                 <li>
@@ -42,12 +54,8 @@ function Profile() {
                 </li>
               </ul>
             </div>
-            <div className='profile-bio '>
-              <p>
-                <span className='profile-real-name'>{user[0].userName}</span>
-                Enjoy your moments 🇨🇦🌕📖⛹
-              </p>
-            </div>
+
+            {/* // */}
           </div>
           {/* end of profile section */}
         </div>
@@ -181,7 +189,7 @@ function Profile() {
         </div>
         <div className='loader'></div>
       </main>
-    </body>
+    </div>
   )
 }
 
