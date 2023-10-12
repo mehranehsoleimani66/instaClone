@@ -1,16 +1,16 @@
-:root {
+/* :root {
   font-size: 10px;
 }
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-body {
+} */
+/* body {
   min-height: 100vh;
   background-color: black;
   padding-bottom: 3rem;
-}
+} */
 img {
   display: block;
 }
@@ -46,7 +46,7 @@ img {
   align-items: center;
 }
 .profile::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
 }
