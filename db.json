@@ -1,0 +1,69 @@
+{
+  "posts": [
+    {
+      "postId": "88a181f0-b2c6-4f2d-9d7c-936b30ed4a86",
+      "userName": "Ali KhodaieDoost",
+      "userAvatar": "https://i.pravatar.cc/100",
+      "likesCount": 7,
+      "alreadyLiked": false,
+      "timespamp": "2w",
+      "postImage": "https://fastly.picsum.photos/id/866/600/400.jpg?hmac=HJKPGrlmng3jwxdqKDC8rTKTDYbRTP_nuCWsgr6WaFY",
+      "postTitle": "A good day",
+      "postBody": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam soluta sapiente doloribus eos quaerat accusantium dolore rem adipisci eveniet. Iusto, a corrupti temporibus delectus mollitia asperiores provident architecto? Tempore?"
+    },
+    {
+      "postId": "88a181f0-b2c6-4f2d-9d7c-936b30ed4a87",
+      "userName": "Ali Ahmadi",
+      "userAvatar": "https://i.pravatar.cc/170",
+      "likesCount": 543,
+      "alreadyLiked": false,
+      "timespamp": "23min",
+      "postImage": "https://images.pexels.com/photos/5876805/pexels-photo-5876805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "postTitle": "Sample Post",
+      "postBody": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam soluta sapiente doloribus eos quaerat accusantium dolore rem adipisci eveniet. Iusto, a corrupti temporibus delectus mollitia asperiores provident architecto? Tempore?"
+    },
+    {
+      "postId": "88a181f0-b2c6-4f2d-9d7c-936b30ed4a88",
+      "userName": "sara samadi",
+      "userAvatar": "https://i.pravatar.cc/120",
+      "likesCount": 128,
+      "alreadyLiked": true,
+      "timespamp": "2d",
+      "postImage": "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "postTitle": "Sample Post",
+      "postBody": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam soluta sapiente doloribus eos quaerat accusantium dolore rem adipisci eveniet. Iusto, a corrupti temporibus delectus mollitia asperiores provident architecto? Tempore?"
+    }
+  ],
+  "users": [
+    {
+      "id": 0.3173919442971528,
+      "userName": "mehraneh",
+      "userPassword": "1234",
+      "userEmail": "m@gmail.com"
+    },
+    {
+      "id": 0.3517792737304485,
+      "userName": "m",
+      "userPassword": "1",
+      "userEmail": "m@gmail.com"
+    },
+    {
+      "id": 0.18622767064287649,
+      "userName": "m",
+      "userPassword": "1",
+      "userEmail": "m@gmail.com"
+    },
+    {
+      "id": 0.035474790472142415,
+      "userName": "m",
+      "userPassword": "7",
+      "userEmail": "m1@gmail.com"
+    },
+    {
+      "id": 0.5244792072490821,
+      "userName": "m",
+      "userPassword": "1",
+      "userEmail": "m@gmail.com"
+    }
+  ]
+}
