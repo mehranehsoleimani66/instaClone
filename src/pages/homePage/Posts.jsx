@@ -3,9 +3,11 @@ import './Posts.css'
 import Post from './Post'
 import Suggestion from './Suggestion'
 import axios from 'axios'
+import { useThemeContext } from '../../context/ThemeContext'
 
 const Posts = () => {
   const [posts, setPost] = useState([])
+
   const getPostsHandler = async () => {
     const response = await axios.get('http://localhost:3000/posts')
     const { data } = response
