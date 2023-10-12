@@ -3,8 +3,11 @@ import axios from 'axios'
 import React, { useRef } from 'react'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router'
+import { useThemeContext } from '../../context/ThemeContext'
 
 function Signup() {
+  const theme = useThemeContext()
+  const darkMode = theme.darkMode
   const navigate = useNavigate()
   const inputEmailRef = useRef(null)
   const inputPasswordRef = useRef(null)
@@ -67,21 +70,21 @@ function Signup() {
       </div>
       <div className='sign_right'>
         <div className='sign_component '>
-          <img src='./images/logo.png' />
+          <img src={`${darkMode ? './images/logo.png' : './images/Logo-Iight.png'}`} />
           <label>
             User Name<span className='errmsg'>*</span>
           </label>
-          <input type='text' ref={inputUsernameRef} />
+          <input type='text' className={`${darkMode ? 'inputColorDark' : 'inputColorLight'}`} ref={inputUsernameRef} />
 
           <label>
             User Email<span className='errmsg'>*</span>
           </label>
-          <input type='email' ref={inputEmailRef} />
+          <input type='email' className={`${darkMode ? 'inputColorDark' : 'inputColorLight'}`} ref={inputEmailRef} />
 
           <label>
             User Password<span className='errmsg'>*</span>
           </label>
-          <input type='password' ref={inputPasswordRef} />
+          <input type='password' className={`${darkMode ? 'inputColorDark' : 'inputColorLight'}`} ref={inputPasswordRef} />
 
           <button>sign up</button>
         </div>
