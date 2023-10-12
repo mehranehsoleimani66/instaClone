@@ -67,7 +67,19 @@
   color: red;
 }
 
-.sign_more {
+.signMoreDark {
+  border: 1px solid gray;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  margin-top: 15px;
+  background: black;
+  color: white;
+}
+.signMoreLight {
+  background: white;
+  color: black;
   border: 1px solid gray;
   padding: 20px;
   margin-left: 30px;
@@ -75,17 +87,17 @@
   text-align: center;
   margin-top: 15px;
 }
-.sign_more > span {
+.signMore > span {
   font-size: 14px;
   font-weight: 500;
 }
-.sign_more > span > a {
+.signMore > span > a {
   border: 0;
   background: 0;
   color: #0095f6;
   font-weight: bolder;
   padding-left: 5px;
 }
-.sign_more > span > a:hover {
+.signMore > span > a:hover {
   cursor: pointer;
 }
