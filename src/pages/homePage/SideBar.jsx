@@ -18,9 +18,12 @@ import ExploreIcon from '@mui/icons-material/Explore'
 import SlideshowIcon from '@mui/icons-material/Slideshow'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
+import { useThemeContext } from '../../context/ThemeContext'
 
 function SideBar() {
   const { user, setUser } = AuthCountext()
+  const theme = useThemeContext()
+  const darkMode = theme.darkMode
 
   const navigate = useNavigate()
   const logOutHandler = () => {
@@ -36,11 +39,11 @@ function SideBar() {
   }, [])
 
   return (
-    <div className='sidebar'>
-      <img className='sidebar_logo' src='./images/logo.png' alt='' />
-      <div className='sidebar-buttons'>
+    <div className={`sidebar ${darkMode ? 'sideBarColorDark' : 'sideBarColorLight'}`}>
+      <img className='sidebar_logo' src={`${darkMode ? './images/logo.png' : './images/Logo-Iight.png'}`} />
+      <div className=' sidebar-buttons'>
         <Link to='/profile' style={{ textDecoration: 'none' }}>
-          <button className='sidebar_button'>
+          <button className='profile_name sidebar_button'>
             {user[0].userName ? (
               <div className='user__email'>
                 <Avatar
@@ -89,9 +92,22 @@ function SideBar() {
           ) : null}
         </div>
         <div className='sidebar_more'>
-          <button>
+          <button
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              width: '11%',
+              height: '11%',
+              justifyContent: 'left',
+              alignItems: 'center',
+              padding: '10px',
+
+              border: '0',
+              borderRadius: '10px'
+            }}
+          >
             <MenuIcon />
-            <span>More</span>
+            <span style={{ paddingLeft: '5px', fontWeight: 'bold', fontSize: '15px' }}>More</span>
           </button>
         </div>
       </div>
