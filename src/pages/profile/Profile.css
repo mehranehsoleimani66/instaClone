@@ -6,18 +6,13 @@
 *::after {
   box-sizing: border-box;
 } */
-/* body {
-  min-height: 100vh;
-  background-color: black;
-  padding-bottom: 3rem;
-} */
+
 img {
   display: block;
 }
 .container {
-  max-width: 93.5rem;
-  margin: 0 auto;
-  padding: 0 2rem;
+  /* margin: 0 auto;
+  padding: 0 2rem; */
 }
 .btn {
   all: unset;
@@ -39,11 +34,11 @@ img {
 }
 /* profile section*/
 .profile {
-  padding: 5rem 0;
+  /* padding: 5rem 0; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
 }
 .profile::after {
   content: '';
@@ -60,8 +55,9 @@ img {
 }
 .profile-image img {
   border-radius: 50%;
-  width: 70%;
-  height: 70%;
+  width: 50%;
+  height: 50%;
+  border-radius: 100%;
 }
 .profile-user-settings,
 .profile-stats,
@@ -70,11 +66,11 @@ img {
   width: calc(66.666%-2rem);
 }
 .profile-user-settings {
-  margin-top: 1.1rem;
+  /* margin-top: 1.1rem; */
 }
 .profile-user-name {
   display: inline-block;
-  font-size: 3.2rem;
+  font-size: 1.2rem;
   color: green;
   font-style: italic;
 }
@@ -103,38 +99,43 @@ img {
   font-size: 20px;
   font-style: bolder;
   line-height: 1.5rem;
-  margin-right: 10px;
+  margin-right: 70px;
   cursor: pointer;
 }
 .profile-state-count {
   font-size: 20px;
-  color: #999;
+  color: #5b5959;
   font-style: italic;
-  padding-right: 5px;
+  margin: 5px;
+  font-weight: 400;
 }
 .profile-stats li:last-of-type {
   margin-right: 0;
 }
 .profile-bio {
-  font-size: 1.6rem;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
-  margin-top: 2.3rem;
+  /* margin-top: 2.3rem; */
   font-style: italic;
+  margin-bottom: 20px;
 }
 .profile-bio .profile-real-name {
   padding-right: 5px;
+  font-style: italic;
 }
 .profile-real-name,
 .profile-stat-count,
 .profile-edit-btn {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .gallery {
   display: flex;
+  width: 80%;
+  justify-content: center;
   flex-wrap: wrap;
-  margin: -1rem -1rem;
+  margin: auto;
   padding-bottom: 3rem;
 }
 .gallery-item {
@@ -192,29 +193,37 @@ img {
   animation: loader 500ms linear infinite;
 }
 .home-button {
-  background-color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: white;
   background: 0;
   margin: 5px 10px 5px 10px;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 10px 10px 10px;
   border: 0;
   border-radius: 15px;
-  width: 10%;
+  width: 8%;
   font-size: 20px;
-  background: rgba(25, 216, 95, 0.925);
+  background: rgba(207, 205, 205, 0.925);
   cursor: pointer;
-  font-style: none;
   margin: 20px;
   text-decoration: none;
+  border: 1px solid black;
 }
 .profile-button {
 }
 .home-button span {
   display: flex;
-  color: green;
+  color: rgb(49, 49, 49);
   text-align: center;
   padding-left: 40px;
+}
+.profileColorDark {
+  background: black;
+  color: white;
+  min-height: 100vh;
+}
+.profileColorLight {
+  color: black;
+  background: white;
+  min-height: 100vh;
 }
