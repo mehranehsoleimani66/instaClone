@@ -63,10 +63,7 @@ function Signup() {
   return (
     <form className='signup-page' onSubmit={registerHandler}>
       <div className='sign_left'>
-        <img
-          src='https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones.png?__makehaste_cache_breaker=HOgRclNOosk'
-          alt=''
-        />
+        <img src={`${darkMode ? './images/1.png' : './images/2.jpg'}`} style={{ width: '50%', height: '50%', margin: 'auto' }} alt='' />
       </div>
       <div className='sign_right'>
         <div className='sign_component '>
@@ -89,7 +86,7 @@ function Signup() {
           <button>sign up</button>
         </div>
 
-        <div className='sign_more'>
+        <div className={`signMore ${darkMode ? 'signMoreDark' : 'signMoreLight'}`}>
           <span>
             Do You Have an Account ?<a href='/login'>Log In</a>
           </span>
