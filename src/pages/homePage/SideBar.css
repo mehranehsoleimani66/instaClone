@@ -5,7 +5,7 @@
   flex-direction: column;
   z-index: 1;
 }
-.sidebar_logo {
+.sidebar .sidebar_logo {
   width: 120px;
   margin: 25px;
 }
@@ -13,12 +13,15 @@
   display: flex;
   flex-direction: column;
 }
+.profile_name {
+  background: 0;
+  color: green;
+}
 .sidebar_button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: white;
-  background: 0;
+  /* background: white; */
   margin: 5px 10px 5px 10px;
   padding: 10px 15px 10px 15px;
   border: 0;
@@ -40,11 +43,15 @@
   border-radius: 10px;
   font-weight: bold;
   color: white;
-  background-color: rgba(255, 255, 255, 0.211);
+  background: green;
   padding: 10px;
   border: 0;
   margin-left: 40px;
   margin-top: 15px;
+}
+.logout__button:hover {
+  cursor: pointer;
+  background: rgba(76, 160, 81, 0.845);
 }
 
 .login__button {
@@ -60,11 +67,19 @@
 .sidebar_more {
   position: fixed;
   bottom: 0;
+  margin: 5px 10px 5px 10px;
+  padding: 20px 15px 20px 15px;
+  border: 0;
+  border-radius: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .email__text {
   font-size: 15px;
   font-weight: bold;
-  color: rgb(225, 239, 231);
+  padding-left: 10px;
+  /* color: rgb(225, 239, 231); */
 }
 .user__info {
   display: flex;
@@ -76,4 +91,12 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
+}
+.sideBarColorDark {
+  color: white;
+  background: black;
+}
+.sideBarColorLight {
+  color: black;
+  background: white;
 }
