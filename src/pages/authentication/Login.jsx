@@ -47,10 +47,7 @@ const Login = () => {
     <>
       <div className='login-page'>
         <div className='login_left'>
-          <img
-            src='https://static.cdninstagram.com/images/instagram/xig/homepage/phones/home-phones.png?__makehaste_cache_breaker=HOgRclNOosk'
-            alt=''
-          />
+          <img src={`${darkMode ? './images/1.png' : './images/2.jpg'}`} style={{ width: '50%', height: '50%', margin: 'auto' }} alt='' />
         </div>
         <div className='login_right'>
           <div className='login_component '>
@@ -79,7 +76,7 @@ const Login = () => {
             <button onClick={LoginHandler}>login</button>
           </div>
 
-          <div className='login_more'>
+          <div className={`loginMore ${darkMode ? 'loginMoreDark' : 'loginMoreLight'}`}>
             <span>
               Do'nt You Have Account ?<a href='/'>Sign Up</a>
             </span>
