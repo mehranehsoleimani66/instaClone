@@ -77,17 +77,38 @@
   text-align: center;
   margin-top: 15px;
 }
-.login_more > span {
+
+.loginMoreDark {
+  border: 1px solid gray;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  margin-top: 15px;
+  background: black;
+  color: white;
+}
+.loginMoreLight {
+  background: white;
+  color: black;
+  border: 1px solid gray;
+  padding: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+  margin-top: 15px;
+}
+.loginMoreLight > span {
   font-size: 14px;
   font-weight: 500;
 }
-.login_more > span > a {
+.loginMore > span > a {
   border: 0;
   background: 0;
   color: #0095f6;
   font-weight: bolder;
   padding-left: 5px;
 }
-.login_more > span > a:hover {
+.loginMore > span > a:hover {
   cursor: pointer;
 }
