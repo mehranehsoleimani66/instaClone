@@ -41,11 +41,10 @@ const Post = ({ userName, userAvatar, likesCount, postImage, postTitle, timespam
       <div className='post-footer'>
         <div className='post_footerIcons'>
           <div className='post_iconsMain'>
-            <div style={{ padding: '10px' }}>
-              <div onClick={likeHandleClick} disabled={isLiked} style={buttonStyle}>
-                <FavoriteBorderIcon className='postIcon' />
-              </div>
+            <div onClick={likeHandleClick} disabled={isLiked} style={buttonStyle}>
+              <FavoriteBorderIcon className='postIcon' />
             </div>
+
             <ChatIcon className='postIcon' />
             <TelegramIcon className='postIcon' />
           </div>
